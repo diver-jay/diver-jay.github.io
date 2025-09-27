@@ -1,12 +1,7 @@
-
-import React, { useState } from 'react';
-
-import './index.css';
-
 function App() {
   return (
     <div>
-      <h1>Diver</h1>
+      <h1>Soon to be a badass R3F application</h1>
     </div>
   );
 }
