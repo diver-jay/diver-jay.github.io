@@ -1,0 +1,8 @@
+export default function Experience() {
+  return (
+    <mesh scale={1.5}>
+      <sphereGeometry args={[1.5, 32, 32]} />
+      <meshBasicMaterial color="mediumpurple" wireframe />
+    </mesh>
+  );
+}
