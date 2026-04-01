@@ -1,0 +1,12 @@
+# Diver-J
+
+> Full-stack software engineer. Love diving deep into hard problems. Interested in leveraging AI to maximize productivity and build better software, faster.
+
+## Blog
+
+- [Blog](/blog): Technical posts on backend architecture, AI workflows, and real engineering problems
+
+## Pages
+
+- [About](/about): Background, experience, and what this blog is about
+- [RSS Feed](/rss.xml): Subscribe to new posts
