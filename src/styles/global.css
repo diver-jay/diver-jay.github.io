@@ -127,6 +127,11 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+.blog-video {
+	width: 100%;
+	border-radius: 8px;
+	margin: 2em 0;
+}
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
