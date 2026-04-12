@@ -89,7 +89,6 @@ p {
 }
 .prose p {
 	margin-bottom: 2em;
-	text-align: center;
 }
 textarea {
 	width: 100%;
@@ -122,8 +121,7 @@ blockquote {
 	border-top: 1px solid rgb(var(--gray-light));
 	border-bottom: 1px solid rgb(var(--gray-light));
 	padding: 1.2em 0;
-	margin: 2em auto;
-	max-width: 80%;
+	margin: 2em 0;
 	font-size: 1.333em;
 	font-style: italic;
 	text-align: center;
