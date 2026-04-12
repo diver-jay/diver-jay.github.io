@@ -1,17 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import { getPostsByLang, getBlogUrl, getBareSlug } from '../../blog/utils';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import Header from '../../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import { getPostsByLang, getBlogUrl, getBareSlug } from '../../../blog/utils';
 
-const posts = await getPostsByLang('en');
+const posts = await getPostsByLang('ko');
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
@@ -92,7 +92,7 @@ const posts = await getPostsByLang('en');
 					{
 						posts.map((post) => (
 							<li>
-								<a href={getBlogUrl(getBareSlug(post.id), 'en')}>
+								<a href={getBlogUrl(getBareSlug(post.id), 'ko')}>
 									{post.data.heroImage && (
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}

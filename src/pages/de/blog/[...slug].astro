@@ -1,10 +1,10 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { getStaticPathsForLocale } from '../../blog/utils';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { getStaticPathsForLocale } from '../../../blog/utils';
 
 export async function getStaticPaths() {
-	return getStaticPathsForLocale('en');
+	return getStaticPathsForLocale('de');
 }
 
 type Props = { post: CollectionEntry<'blog'> };
@@ -13,6 +13,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data} lang="en">
+<BlogPost {...post.data} lang="de">
 	<Content />
 </BlogPost>
