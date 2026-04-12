@@ -124,7 +124,12 @@ blockquote {
 	margin: 2em 0;
 	font-size: 1.333em;
 	font-style: italic;
+	display: flex;
+	justify-content: center;
 	text-align: center;
+}
+blockquote p {
+	margin: 0;
 }
 hr {
 	border: none;
