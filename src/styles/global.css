@@ -118,10 +118,13 @@ pre > code {
 	all: unset;
 }
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
+	border-top: 1px solid rgb(var(--gray-light));
+	border-bottom: 1px solid rgb(var(--gray-light));
+	padding: 1.2em 0;
+	margin: 2em 0;
 	font-size: 1.333em;
+	font-style: italic;
+	text-align: center;
 }
 hr {
 	border: none;
