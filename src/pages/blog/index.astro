@@ -16,7 +16,7 @@ const posts = await getPostsByLang('en');
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				main { width: min(960px, 100% - 2em); } 
 			}
 			ul {
 				display: flex;
