@@ -1,115 +1,118 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import { getPostsByLang, getBlogUrl, getBareSlug } from '../blog/utils';
+import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/Footer.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import Header from "@/components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import { getBareSlug, getBlogUrl, getPostsByLang } from "@/utils/blog";
 
-const posts = await getPostsByLang('en');
+const posts = await getPostsByLang("en");
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section class="hero">
-				<h1>Diver-J</h1>
-				<p class="tagline">Love diving deep into hard problems.</p>
-				<p class="description">
-					Interested in leveraging AI to maximize productivity and build better software, faster.
-				</p>
-			</section>
-			<section class="posts">
-				<h2>Recent Posts</h2>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={getBlogUrl(getBareSlug(post.id), 'en')}>
-									<div class="post-meta">
-										<FormattedDate date={post.data.pubDate} />
-									</div>
-									<h3>{post.data.title}</h3>
-									<p>{post.data.description}</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="hero">
+        <h1>Diver-J</h1>
+        <p class="tagline">Love diving deep into hard problems.</p>
+        <p class="description">
+          Interested in leveraging AI to maximize productivity and build better
+          software, faster.
+        </p>
+      </section>
+      <section class="posts">
+        <h2>Recent Posts</h2>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <a href={getBlogUrl(getBareSlug(post.id), "en")}>
+                  <div class="post-meta">
+                    <FormattedDate date={post.data.pubDate} />
+                  </div>
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	main {
-		max-width: 720px;
-		margin: 0 auto;
-		padding: 2em 1em;
-	}
-	.hero {
-		padding: 3em 0 2em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 2em;
-	}
-	.hero h1 {
-		margin: 0 0 0.25em;
-		font-size: 2.5em;
-	}
-	.tagline {
-		font-size: 1.25em;
-		font-weight: 600;
-		color: var(--accent);
-		margin: 0 0 0.5em;
-	}
-	.description {
-		color: rgb(var(--gray));
-		margin: 0;
-	}
-	.posts h2 {
-		font-size: 1.2em;
-		margin-bottom: 1em;
-		color: rgb(var(--gray-dark));
-	}
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	li {
-		margin-bottom: 1.5em;
-	}
-	li a {
-		display: block;
-		text-decoration: none;
-		color: inherit;
-		padding: 1em;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		transition: border-color 0.2s, box-shadow 0.2s;
-	}
-	li a:hover {
-		border-color: var(--accent);
-		box-shadow: 0 2px 8px rgba(var(--accent-dark), 10%);
-	}
-	.post-meta {
-		font-size: 0.85em;
-		color: rgb(var(--gray));
-		margin-bottom: 0.25em;
-	}
-	li h3 {
-		margin: 0 0 0.25em;
-		font-size: 1.1em;
-	}
-	li p {
-		margin: 0;
-		font-size: 0.9em;
-		color: rgb(var(--gray));
-	}
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2em 1em;
+  }
+  .hero {
+    padding: 3em 0 2em;
+    border-bottom: 1px solid rgb(var(--gray-light));
+    margin-bottom: 2em;
+  }
+  .hero h1 {
+    margin: 0 0 0.25em;
+    font-size: 2.5em;
+  }
+  .tagline {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5em;
+  }
+  .description {
+    color: rgb(var(--gray));
+    margin: 0;
+  }
+  .posts h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: rgb(var(--gray-dark));
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 1.5em;
+  }
+  li a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1em;
+    border: 1px solid rgb(var(--gray-light));
+    border-radius: 8px;
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  li a:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(var(--accent-dark), 10%);
+  }
+  .post-meta {
+    font-size: 0.85em;
+    color: rgb(var(--gray));
+    margin-bottom: 0.25em;
+  }
+  li h3 {
+    margin: 0 0 0.25em;
+    font-size: 1.1em;
+  }
+  li p {
+    margin: 0;
+    font-size: 0.9em;
+    color: rgb(var(--gray));
+  }
 </style>

@@ -1,18 +1,19 @@
 ---
-import { render, type CollectionEntry } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { getStaticPathsForLocale } from '../../blog/utils';
+import { render, type CollectionEntry } from "astro:content";
+
+import BlogPost from "@/layouts/BlogPost.astro";
+import { getStaticPathsForLocale } from "@/utils/blog";
 
 export async function getStaticPaths() {
-	return getStaticPathsForLocale('en');
+  return getStaticPathsForLocale("en");
 }
 
-type Props = { post: CollectionEntry<'blog'> };
+type Props = { post: CollectionEntry<"blog"> };
 
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data} lang="en">
-	<Content />
+  <Content />
 </BlogPost>

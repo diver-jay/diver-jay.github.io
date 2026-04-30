@@ -1,32 +1,39 @@
 ---
-import { languages, type Lang } from '../i18n/ui';
-import { getLangFromUrl, getLocalizedPath } from '../i18n/utils';
+import {
+  getLangFromUrl,
+  getLocalizedPath,
+  languages,
+  type Lang,
+} from "@/utils/i18n";
 
 const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 ---
 
 <select class="lang-picker" onchange="location.href = this.value">
-	{
-		Object.entries(languages).map(([lang, label]) => (
-			<option value={getLocalizedPath(currentPath, currentLang, lang as Lang)} selected={lang === currentLang}>
-				{label}
-			</option>
-		))
-	}
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <option
+        value={getLocalizedPath(currentPath, currentLang, lang as Lang)}
+        selected={lang === currentLang}
+      >
+        {label}
+      </option>
+    ))
+  }
 </select>
 
 <style>
-	.lang-picker {
-		padding: 0.25em 0.5em;
-		font-size: 0.85em;
-		color: var(--black);
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 4px;
-		background: white;
-		cursor: pointer;
-	}
-	.lang-picker:hover {
-		border-color: var(--accent);
-	}
+  .lang-picker {
+    padding: 0.25em 0.5em;
+    font-size: 0.85em;
+    color: var(--black);
+    border: 1px solid rgb(var(--gray-light));
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+  }
+  .lang-picker:hover {
+    border-color: var(--accent);
+  }
 </style>
