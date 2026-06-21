@@ -2,7 +2,7 @@
 import { render, type CollectionEntry } from "astro:content";
 
 import BlogPost from "@/layouts/BlogPost.astro";
-import { getStaticPathsForLocale } from "@/utils/blog";
+import { getBareSlug, getBlogUrl, getStaticPathsForLocale } from "@/utils/blog";
 
 export async function getStaticPaths() {
   return getStaticPathsForLocale("en");
@@ -12,8 +12,15 @@ type Props = { post: CollectionEntry<"blog"> };
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const bareSlug = getBareSlug(post.id);
+const alternates = [
+  { hreflang: "en", href: new URL(getBlogUrl(bareSlug, "en"), Astro.site).href },
+  { hreflang: "ko", href: new URL(getBlogUrl(bareSlug, "ko"), Astro.site).href },
+  { hreflang: "x-default", href: new URL(getBlogUrl(bareSlug, "en"), Astro.site).href },
+];
 ---
 
-<BlogPost {...post.data} lang="en">
+<BlogPost {...post.data} lang="en" alternates={alternates}>
   <Content />
 </BlogPost>

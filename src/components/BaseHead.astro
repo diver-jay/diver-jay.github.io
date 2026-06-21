@@ -12,11 +12,12 @@ interface Props {
   title: string;
   description: string;
   image?: ImageMetadata;
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image = FallbackImage, alternates } = Astro.props;
 ---
 
 <!-- Google Site Verification -->
@@ -57,6 +58,13 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Hreflang -->
+{
+  alternates?.map(({ hreflang, href }) => (
+    <link rel="alternate" hreflang={hreflang} href={href} />
+  ))
+}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

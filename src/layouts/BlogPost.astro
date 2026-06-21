@@ -8,7 +8,10 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import Header from "@/components/Header.astro";
 import type { Lang } from "@/utils/i18n";
 
-type Props = CollectionEntry<"blog">["data"] & { lang: Lang };
+type Props = CollectionEntry<"blog">["data"] & {
+  lang: Lang;
+  alternates?: Array<{ hreflang: string; href: string }>;
+};
 
 const {
   title,
@@ -19,12 +22,13 @@ const {
   heroImageUrl,
   cardTitle,
   lang,
+  alternates,
 } = Astro.props;
 ---
 
 <html lang={lang}>
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} alternates={alternates} />
     <style>
       main {
         width: calc(100% - 2em);
