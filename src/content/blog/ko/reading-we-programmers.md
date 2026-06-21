@@ -1,6 +1,6 @@
 ---
 title: '"우리, 프로그래머들"을 읽고'
-description: ""
+description: "AI가 코드를 짜는 시대, 밥아저씨 로버트 마틴이 전하는 인사이트"
 pubDate: "Apr 28 2026"
 heroImage: "../../../assets/blog/we-programmer-thumbnail.png"
 cardTitle: '"우리, 프로그래머들"을 읽고'

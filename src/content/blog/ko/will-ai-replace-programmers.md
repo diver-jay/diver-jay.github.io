@@ -1,6 +1,6 @@
 ---
 title: "대체되는 개발자, 대체 불가능한 개발자 - 그대들은 어떻게 살 것인가"
-description: "의도적 무지. comfort zone을 버리고, 5주간의 3D 하네스 프로그래밍 도전기"
+description: "AI는 개발자를 대체할것인가? 하네스 프로그래밍으로 r3f-drei water caustics effect 3D 프로그래밍에 도전한 풀스택 개발자의 실험기"
 pubDate: "Apr 02 2026"
 heroImage: "../../../assets/blog/water-caustics-thumbnail.png"
 cardTitle: "AI 시대, 그대들 어떻게 코딩할 것인가"

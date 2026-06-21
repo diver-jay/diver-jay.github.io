@@ -1,6 +1,6 @@
 ---
 title: 'Reading "We, Programmers"'
-description: "Detail-obsessed freaks?"
+description: "AI is taking over. Here's what Uncle Bob actually thinks about it."
 pubDate: "Apr 28 2026"
 heroImage: "../../../assets/blog/we-programmer-thumbnail.png"
 cardTitle: 'Reading "We, Programmers"'

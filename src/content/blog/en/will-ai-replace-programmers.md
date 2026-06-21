@@ -1,6 +1,6 @@
 ---
 title: "Will AI Replace Programmers? — Here's What I Found Out"
-description: "Deliberate ignorance. Stepping out of the comfort zone — a 5-week journey into 3D programming with AI."
+description: "Everyone said AI would replace developers. So I tested it — a fullstack developer with zero 3D experience built r3f-drei water caustics using nothing but harness programming. Here's what actually happened."
 pubDate: "Apr 02 2026"
 heroImage: "../../../assets/blog/water-caustics-thumbnail.png"
 cardTitle: "Will AI Replace You?"
