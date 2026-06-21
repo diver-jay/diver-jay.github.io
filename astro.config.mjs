@@ -12,7 +12,20 @@ export default defineConfig({
 		defaultLocale: 'en',
 		locales: ['en', 'ko', 'de'],
 	},
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => !/\/(blog|ko\/blog|de\/blog)\/\d+\/?$/.test(page),
+			i18n: {
+				defaultLocale: 'en',
+				locales: {
+					en: 'en',
+					ko: 'ko',
+					de: 'de',
+				},
+			},
+		}),
+	],
 	markdown: {
 		syntaxHighlight: {
 			type: 'shiki',
