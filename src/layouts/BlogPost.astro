@@ -29,6 +29,18 @@ const {
 <html lang={lang}>
   <head>
     <BaseHead title={title} description={description} alternates={alternates} />
+    <script
+      type="application/ld+json"
+      set:text={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description: description,
+        datePublished: pubDate.toISOString().split("T")[0],
+        author: "Diver-J",
+        url: new URL(Astro.url.pathname, Astro.site).href,
+      })}
+    />
     <style>
       main {
         width: calc(100% - 2em);
