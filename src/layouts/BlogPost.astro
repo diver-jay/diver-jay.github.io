@@ -29,9 +29,8 @@ const {
 <html lang={lang}>
   <head>
     <BaseHead title={title} description={description} alternates={alternates} />
-    <script
-      type="application/ld+json"
-      set:text={JSON.stringify({
+    <Fragment
+      set:html={`<script type="application/ld+json">${JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: title,
@@ -39,7 +38,7 @@ const {
         datePublished: pubDate.toISOString().split("T")[0],
         author: "Diver-J",
         url: new URL(Astro.url.pathname, Astro.site).href,
-      })}
+      })}</script>`}
     />
     <style>
       main {
